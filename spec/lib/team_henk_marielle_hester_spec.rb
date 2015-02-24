@@ -1,4 +1,4 @@
-describe Converter do
+describe TeamHenkMarielleHester do
   [
     [1,    'I'],
     [2,    'II'],
@@ -10,7 +10,7 @@ describe Converter do
     [8,    'VIII'],
     [9,    'IX'],
     [10,   'X'],
-    [175,  'XIX'],
+    [19,  'XIX'],
     [99,   'XCIX'],
     [42,   'XLII'],
     [151,  'CLI'],
@@ -31,7 +31,19 @@ describe Converter do
     roman  = conversion[1]
 
     it "converts #{roman} to #{arabic}" do
-      expect(described_class.convert(roman)).to eq arabic
+      expect(described_class.new(roman).to_i).to eq arabic
     end
+  end
+
+  it "adds 2 romans together" do
+    expect(described_class.new('IX') + described_class.new('XII')).to eq 21
+  end
+
+  it "multiplies 2 romans together" do
+    expect(described_class.new('IX') * described_class.new('XII')).to eq 108
+  end
+
+  it "raises 2 roman to the power of another" do
+    expect(described_class.new('IX') ** described_class.new('II')).to eq 81
   end
 end
