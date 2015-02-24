@@ -28,4 +28,4 @@ number_b = ARGV[4]
 mode     = ARGV[5].to_s || 'arabic'
 
 first = class_a.constantize.new(number_a)
-puts first.send(operator, class_b.constantize.new(number_a))
+puts first.send(operator, class_b.constantize.new(number_b))
