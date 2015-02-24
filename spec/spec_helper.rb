@@ -18,6 +18,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require File.join(File.dirname(__FILE__), '..', 'lib', 'converter.rb')
+require File.join(File.dirname(__FILE__), '..', 'lib', 'team_henk_marielle_hester.rb')
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
