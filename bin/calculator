@@ -1,1 +1,31 @@
 #!/usr/bin/env ruby
+#
+# Calculates sum of two roman digits.
+#
+# $ ./bin/calculator ClassNameA XI + ClassNameB VI
+
+unless (5..6).to_a.include? ARGV.size
+  fail 'Wrong number of arguments. Should look like "ClassNameA XI + ClassNameB IX".'
+end
+
+if ARGV.size == 6 && !['arabic', 'roman'].include?(ARGV[5].to_s)
+  fail 'Mode must be either "arabic" (default) or "roman".'
+end
+
+require 'active_support/inflector'
+
+Dir[File.join(File.dirname(__FILE__), '..', 'lib', '**', '*.rb')].each do |file|
+  require file
+end
+
+
+
+class_a  = ARGV[0]
+number_a = ARGV[1]
+operator = ARGV[2]
+class_b  = ARGV[3]
+number_b = ARGV[4]
+mode     = ARGV[5].to_s || 'arabic'
+
+first = class_a.constantize.new(number_a)
+puts first.send(operator, class_b.constantize.new(number_a))
