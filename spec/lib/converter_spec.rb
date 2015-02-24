@@ -10,7 +10,7 @@ describe Converter do
     [8,    'VIII'],
     [9,    'IX'],
     [10,   'X'],
-    [175,  'XIX'],
+    [19,   'XIX'],
     [99,   'XCIX'],
     [42,   'XLII'],
     [151,  'CLI'],
@@ -18,7 +18,14 @@ describe Converter do
     [88,   'LXXXVIII'],
     [54,   'LIV'],
     [2015, 'MMXV'],
-    [1986, 'MCMLXXXVI']
+    [1986, 'MCMLXXXVI'],
+    [12,   'XII'],
+    [69,   'LXIX'],
+    [9476, 'MMMMMMMMMCDLXXVI'],
+    [101,  'CI'],
+    [1009, 'MIX'],
+    [1999, 'MCMXCIX'],
+
   ].each do |conversion|
 
     arabic = conversion[0]
