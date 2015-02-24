@@ -1,4 +1,4 @@
-class Converter
+class HackerTwo
 
     def initialize(roman)
         @roman = roman

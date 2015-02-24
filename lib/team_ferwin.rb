@@ -43,6 +43,14 @@ class TeamFerwin
       self.to_i - other.to_i
     end
 
+    def %(other)
+      self.to_i % other.to_i
+    end
+
+    def **(other)
+      self.to_i ** other.to_i
+    end
+
     def /(other)
       self.to_i.to_f / other.to_i.to_f
     end
